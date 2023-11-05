@@ -45,6 +45,8 @@ public class StudentController {
 		return flashmsg;
 	}
 	
+	
+	//update a student data with ID
 	@PutMapping(path = "/student/update/{id}")
 	public Student updateStudents(@PathVariable int id, @RequestBody Student student) {
 		Student s = repo.findById(id).get(); 
@@ -60,6 +62,7 @@ public class StudentController {
 		return s;
 	}
 	
+	//Delete a student from db with ID
 	@DeleteMapping(path="/student/delete/{id}")
 	public String removeStudent(@PathVariable int id) {
 		Student s = repo.getById(id);
